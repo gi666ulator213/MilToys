@@ -1,0 +1,63 @@
+﻿<Window x:Class="MilToys.View.Windows.NewToyWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MilToys.View.Windows"
+        mc:Ignorable="d"
+        Title="Додавання Іграшки" Height="295" Width="393" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="/View/Windows/newToy.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Padding="15,15,15,0" Margin="-14,0,0,0">
+            <Grid Margin="10,-9,-5,0">
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="#597eb5"/>
+                        <Setter Property="FontSize" Value="22"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                    <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignTextBox}">
+                        <Setter Property="Foreground" Value="#597eb5"/>
+                        <Setter Property="FontSize" Value="22"/>
+                        <Setter Property="BorderBrush" Value="#597eb5"/>
+                    </Style>
+                </Grid.Resources>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="154*"/>
+                    <ColumnDefinition Width="163*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="Назва іграшки" Height="40" Background="White" FontFamily="Courier New" FontWeight="Normal" FontSize="20"/>
+                <TextBox Name="ToyName" Grid.Row="0" Grid.Column="1" Background="White" TextBlock.FontFamily="Courier New" TextBlock.FontSize="20" TextBlock.FontWeight="Normal"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="На складі:" Height="40" Background="White" FontFamily="Courier New" FontSize="20" FontWeight="Normal"/>
+                <TextBox Name="ToyStock" Grid.Column="1" Margin="0,0,0,0" Grid.Row="1" Background="White" TextBlock.FontFamily="Courier New" TextBlock.FontSize="20" TextBlock.FontWeight="Normal"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Вік" Height="40" Background="White" FontFamily="Courier New" FontSize="20" FontWeight="Normal"/>
+                <TextBox Name="ToyAge" Grid.Row="2" Grid.Column="1" Margin="0,0,0,0" Background="White" TextBlock.FontFamily="Courier New" TextBlock.FontSize="20" TextBlock.FontWeight="Normal" Height="40"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Ціна" Height="40" FontFamily="Courier New" FontSize="20" Background="White"/>
+                <TextBox Name="ToyPrice" Grid.Row="3" Margin="0,0,0,0" Grid.Column="1" Background="White" TextBlock.FontFamily="Courier New" TextBlock.FontSize="20" TextBlock.FontWeight="Normal" Height="40"/>
+
+                <Button Grid.Row="4" Content="Додати" Background="#597eb5" Margin="61,26,61,86"
+                        BorderThickness="0" materialDesign:ButtonAssist.CornerRadius="8" FontSize="20" FontWeight="Normal"
+                        Click="ToyAdd_Click" Grid.ColumnSpan="2"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

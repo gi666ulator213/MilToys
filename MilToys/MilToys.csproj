@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="mainWindow.jpg" />
+    <None Remove="View\Windows\1653394744_15-celes-club-p-fon-dlya-magazina-igrushek-krasivie-18.jpg" />
+    <None Remove="View\Windows\authWindow.jpg" />
+    <None Remove="View\Windows\editToy.jpg" />
+    <None Remove="View\Windows\newToy.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>7</VersionMinor>
+      <VersionMajor>8</VersionMajor>
+      <Guid>00020905-0000-0000-c000-000000000046</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\app.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.8.1" />
+    <PackageReference Include="MySql.Data" Version="8.0.33" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Templates\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="mainWindow.jpg" />
+    <Resource Include="View\Windows\1653394744_15-celes-club-p-fon-dlya-magazina-igrushek-krasivie-18.jpg" />
+    <Resource Include="View\Windows\authWindow.jpg" />
+    <Resource Include="View\Windows\editToy.jpg" />
+    <Resource Include="View\Windows\newToy.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Templates\Шаблон_Пошуку_Іграшок.dot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
